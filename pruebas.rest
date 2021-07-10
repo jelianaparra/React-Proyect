@@ -1,0 +1,102 @@
+### Probando el registro de usuarios
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+   "name": "samuel",
+   "email": "samu@gmail.com",
+   "password": "salypimienta"
+}
+
+### Probando el login de usuario
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+   "name": "",
+   "email": "mm@gmail.com",
+   "password": "salypimienta"
+}
+### Obteniendo un profile
+POST http://localhost:3000/myprofile 
+Content-Type: application/json
+
+{
+   "id": "60e8b3961470745fdcb2fbca"
+}
+
+### Eliminando un profile
+DELETE http://localhost:3000/deleteprofile
+Content-Type: application/json
+
+{
+   "id": "60e8b3961470745fdcb2fbca"
+}
+
+### Actualizando un Profile
+PUT http://localhost:3000/uptadeprofile
+Content-Type:  application/json
+
+{   
+    "id": "60e8b3961470745fdcb2fbca",
+    "name": "camilo",
+    "email": "mariacamilo@gmail.com"
+}
+
+
+### TASKS
+
+
+### Agregando una tarea
+POST http://localhost:3000/addtask
+Content-Type: application/json
+
+{
+   "title": "Cocinar sopa",
+   "description":"Picar las verduras muy delgadas",
+   "timelimit": "Hasta las 12pm ",
+   "datelimit": "miercoles 20",
+   "tags":"NO MUY IMPORTANTE"
+}
+
+### Obteniendo las peliculas
+GET http://localhost:3000/alltasks
+
+### Actualizando las peliculas 
+PUT http://localhost:3000/uptadetask
+Content-Type: application/json
+
+{
+    "id": "60e8cf9221e0a965683c2dc1",
+    "title": "Realizar el proyecto de moviles",
+    "description":"Estudiar React Native",
+    "timelimit": "Hasta las 12pm ",
+    "datelimit": "miercoles 20",
+    "tags":"MUY IMPORTANTE"
+}
+
+### Obteniendo una pelicula 
+POST http://localhost:3000/task
+Content-Type: application/json
+
+{
+    "id": "60e8cefa21013a5998ed2f23"
+
+}
+
+### Eliminando una pelicula 
+DELETE http://localhost:3000/deletetask
+Content-Type: application/json
+
+{
+    "id": "60e8cefa21013a5998ed2f23"
+}
+
+### Buscar pelicula por el titulo
+post http://localhost:3000/taskbytitle
+Content-Type: application/json
+
+{
+    "title": "Cocinar sopa"
+
+}
