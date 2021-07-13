@@ -18,13 +18,27 @@ const tasksSchema = new Schema(
       required: true,
       trim: true,
     },
+    category: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     timelimit: {
       type: String,
       required: true,
       trim: true,
     },
     datelimit: {
+      type: Date,
+      required: true,
+      trim: true,
+    },
+    image: {
       type: String,
+      trim: true,
+    },
+    count: {
+      type: Number,
       required: true,
       trim: true,
     },

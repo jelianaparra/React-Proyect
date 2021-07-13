@@ -3,8 +3,8 @@ POST http://localhost:3000/register
 Content-Type: application/json
 
 {
-   "name": "samuel",
-   "email": "samu@gmail.com",
+   "fullname": "samuel rojas",
+   "email": "rojas10@gmail.com",
    "password": "salypimienta"
 }
 
@@ -13,8 +13,8 @@ POST http://localhost:3000/login
 Content-Type: application/json
 
 {
-   "name": "",
-   "email": "mm@gmail.com",
+  // "fullname": "",
+   "email": "rojas10@gmail.com",
    "password": "salypimienta"
 }
 ### Obteniendo un profile
@@ -22,7 +22,7 @@ POST http://localhost:3000/myprofile
 Content-Type: application/json
 
 {
-   "id": "60e8b3961470745fdcb2fbca"
+   "id": "60ecd5793bd7036564d78753"
 }
 
 ### Eliminando un profile
@@ -30,7 +30,7 @@ DELETE http://localhost:3000/deleteprofile
 Content-Type: application/json
 
 {
-   "id": "60e8b3961470745fdcb2fbca"
+   "id": "60ecd5793bd7036564d78753"
 }
 
 ### Actualizando un Profile
@@ -38,9 +38,9 @@ PUT http://localhost:3000/uptadeprofile
 Content-Type:  application/json
 
 {   
-    "id": "60e8b3961470745fdcb2fbca",
-    "name": "camilo",
-    "email": "mariacamilo@gmail.com"
+    "id": "60e8be1a8940310ca89def90",
+    "fullname": "MANUEL",
+    "email": "MANU@gmail.com"
 }
 
 
@@ -52,17 +52,19 @@ POST http://localhost:3000/addtask
 Content-Type: application/json
 
 {
-   "title": "Cocinar sopa",
-   "description":"Picar las verduras muy delgadas",
+   "title": "Lavar los platos",
+   "description":"con mucho jabon",
    "timelimit": "Hasta las 12pm ",
-   "datelimit": "miercoles 20",
-   "tags":"NO MUY IMPORTANTE"
+   "datelimit": "1624904420875",
+   "tags":"NO MUY IMPORTANTE",
+   "category": "comida",
+   "count": 20
 }
 
-### Obteniendo las peliculas
+### Obteniendo toda las tareas
 GET http://localhost:3000/alltasks
 
-### Actualizando las peliculas 
+### Actualizando la tarea 
 PUT http://localhost:3000/uptadetask
 Content-Type: application/json
 
@@ -75,7 +77,7 @@ Content-Type: application/json
     "tags":"MUY IMPORTANTE"
 }
 
-### Obteniendo una pelicula 
+### Obteniendo una tarea
 POST http://localhost:3000/task
 Content-Type: application/json
 
@@ -84,7 +86,7 @@ Content-Type: application/json
 
 }
 
-### Eliminando una pelicula 
+### Eliminando una tarea
 DELETE http://localhost:3000/deletetask
 Content-Type: application/json
 
@@ -92,11 +94,19 @@ Content-Type: application/json
     "id": "60e8cefa21013a5998ed2f23"
 }
 
-### Buscar pelicula por el titulo
+### Buscar tarea por el titulo
 post http://localhost:3000/taskbytitle
 Content-Type: application/json
 
 {
     "title": "Cocinar sopa"
 
+}
+
+### Obteniendo las estadisticas
+GET http://localhost:3000/taskstatistics
+
+{
+    "id":"60ec616dc0927a539c50f771",
+    "count" : 20
 }

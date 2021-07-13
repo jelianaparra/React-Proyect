@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 const userSchema = new Schema(
   {
-    name: {
+    fullname: {
       type: String,
       required: true,
       trim: true,
@@ -17,25 +17,7 @@ const userSchema = new Schema(
       required: true,
       trim: true,
     },
-    lastname: {
-      type: String,
-      required: true,
-      trim: true,
-      default: "unsigned",
-    },
-    direction: {
-      type: String,
-      required: true,
-      trim: true,
-      default: "unsigned",
-    },
-    age: {
-      type: Number,
-      required: true,
-      trim: true,
-      default: 0,
-    },
-    gender: {
+    confirmpass: {
       type: String,
       required: true,
       trim: true,
@@ -45,6 +27,12 @@ const userSchema = new Schema(
       type: Object,
       trim: true,
       default: "unsigned",
+    },
+    count: {
+      type: Number,
+      required: true,
+      trim: true,
+      default: 0,
     },
   },
   {

@@ -6,12 +6,9 @@ const SECRET_KEY = "secretkey123456";
 
 exports.createUser = (req, res, next) => {
   const newUser = {
-    name: req.body.name,
+    fullname: req.body.fullname,
     email: req.body.email,
-    //lastname: req.body.lastname,
-    //age: req.body.age,
-    //direction: req.body.direction,
-    //gender: req.body.gender,
+    //count: req.body.count,
     password: bcrypt.hashSync(req.body.password),
   };
 
@@ -30,12 +27,9 @@ exports.createUser = (req, res, next) => {
     });
     const dataUser = {
       //id: user._id,
-      name: user.name,
+      fullname: user.fullname,
       email: user.email,
-      //lastname: user.lastname,
-      //direction: user.direction,
-      //age: user.age,
-      //gender: user.gender,
+      //count: user.count,
       accessToken: accessToken,
       expiresIn: expiresIn,
     };
@@ -72,8 +66,9 @@ exports.loginUser = (req, res, next) => {
 
         const dataUser = {
           id: user._id,
-          name: user.name,
+          fullname: user.fullname,
           email: user.email,
+          //count: user.count,
           accessToken: accessToken,
           expiresIn: expiresIn,
         };
