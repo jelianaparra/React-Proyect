@@ -37,8 +37,8 @@ const tasksSchema = new Schema(
       type: String,
       trim: true,
     },
-    count: {
-      type: Number,
+    status: {
+      type: String,
       required: true,
       trim: true,
     },

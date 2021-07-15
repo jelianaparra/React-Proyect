@@ -22,6 +22,7 @@ exports.getTask = async (req, res) => {
       tasks,
     });
   } catch (err) {
+    console.log(err);
     return res.status(400).json({
       done: false,
       error: "Something went wrong showing the task",
@@ -45,9 +46,27 @@ exports.getTaskbytitle = async (req, res) => {
   }
 };
 
+exports.getTaskbydescription = async (req, res) => {
+  const id = req.body.description;
+  try {
+    let tasks = await tasksSchema.find({ description: id }).exec();
+    res.json({
+      done: true,
+      tasks,
+    });
+    //console.log("dfghjkl");
+  } catch (err) {
+    return res.status(400).json({
+      done: false,
+      error: "Something went wrong showing the task",
+    });
+  }
+};
+
 exports.getTasks = async (req, res) => {
   try {
-    let tasks = await tasksSchema.find()._addSpecial("$orderby", { count: -1 });
+    //._addSpecial("$orderby", { count: -1 })
+    let tasks = await tasksSchema.find();
     res.json({
       done: true,
       tasks,
@@ -75,7 +94,7 @@ exports.addTask = async (req, res) => {
       msg: "Task added successfully!",
     });
   } catch (err) {
-    // console.log("hhhhh", err);
+    //console.log("hhhhh", err);
     return res.status(400).json({
       done: false,
       error: "The task could not be added",
@@ -98,18 +117,18 @@ exports.uptadeTask = async (req, res, next) => {
     req.body.count = req.body.count + 1;
     const taskUpdated = await tasksSchema.findOneAndUpdate(
       { _id: req.params.id },
-      { ...newTask },
+      { ...newTask }
       //{ new: true }, // return updated
 
-      function (error, hola) {
+      /*function (error, hola) {
         if (error) {
           console.log(error);
           //res.json({ message: error });
         }
         console.log(hola);
-      }
+      }*/
     );
-    console.log("hhhh");
+    //console.log("hhhh");
     res.json({ message: "Task updated success" });
   } catch (error) {
     console.log(error);
@@ -120,7 +139,7 @@ exports.uptadeTask = async (req, res, next) => {
   }
 };
 
-exports.getStatistics = async (req, res) => {
+/*exports.getStatistics = async (req, res) => {
   let { id, count } = req.body;
   count = count + 1;
   // console.log(body, id);
@@ -138,7 +157,7 @@ exports.getStatistics = async (req, res) => {
       error: "Something happen showing the statistics",
     });
   }
-};
+};*/
 
 exports.deleteTask = async (req, res) => {
   const id = req.body.id;

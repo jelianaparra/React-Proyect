@@ -28,12 +28,12 @@ const userSchema = new Schema(
       trim: true,
       default: "unsigned",
     },
-    count: {
+    /*count: {
       type: Number,
       required: true,
       trim: true,
       default: 0,
-    },
+    },*/
   },
   {
     timestamps: true,

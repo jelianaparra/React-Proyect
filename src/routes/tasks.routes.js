@@ -8,10 +8,14 @@ router.post("/task", Tasks.getTask);
 // obtener todas las pelis
 router.get("/alltasks", Tasks.getTasks);
 
-router.get("/taskstatistics", Tasks.getStatistics);
+// obtener las estadisticas
+//router.get("/taskstatistics", Tasks.getStatistics);
 
 // obtener una sola tarea por el titulo
 router.post("/taskbytitle", Tasks.getTaskbytitle);
+
+// obtener una sola tarea por la description
+router.post("/taskbydescription", Tasks.getTaskbydescription);
 
 // insertar una tarea
 router.post("/addtask", Tasks.fileUpload, Tasks.addTask);

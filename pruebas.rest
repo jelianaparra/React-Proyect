@@ -3,9 +3,10 @@ POST http://localhost:3000/register
 Content-Type: application/json
 
 {
-   "fullname": "samuel rojas",
-   "email": "rojas10@gmail.com",
-   "password": "salypimienta"
+   "fullname": "santiago rangel",
+   "email": "mira@gmail.com",
+   "password": "salypimienta",
+   "confirmpass":"salypimienta"
 }
 
 ### Probando el login de usuario
@@ -14,7 +15,7 @@ Content-Type: application/json
 
 {
   // "fullname": "",
-   "email": "rojas10@gmail.com",
+   "email": "mira@gmail.com",
    "password": "salypimienta"
 }
 ### Obteniendo un profile
@@ -22,7 +23,7 @@ POST http://localhost:3000/myprofile
 Content-Type: application/json
 
 {
-   "id": "60ecd5793bd7036564d78753"
+   "id": "60ef6f1a08bb9b3018c2e406"
 }
 
 ### Eliminando un profile
@@ -30,7 +31,7 @@ DELETE http://localhost:3000/deleteprofile
 Content-Type: application/json
 
 {
-   "id": "60ecd5793bd7036564d78753"
+   "id": "60ef6f1a08bb9b3018c2e406"
 }
 
 ### Actualizando un Profile
@@ -38,9 +39,9 @@ PUT http://localhost:3000/uptadeprofile
 Content-Type:  application/json
 
 {   
-    "id": "60e8be1a8940310ca89def90",
-    "fullname": "MANUEL",
-    "email": "MANU@gmail.com"
+    "id": "60ef61e394f3690c68d0751a",
+    "fullname": "cesar",
+    "email": "cesar@gmail.com"
 }
 
 
@@ -52,28 +53,27 @@ POST http://localhost:3000/addtask
 Content-Type: application/json
 
 {
-   "title": "Lavar los platos",
-   "description":"con mucho jabon",
+   "title": "ayudar a mi sobrino con la tarea",
+   "description":"tarea de matematicas",
    "timelimit": "Hasta las 12pm ",
    "datelimit": "1624904420875",
    "tags":"NO MUY IMPORTANTE",
    "category": "comida",
-   "count": 20
+   "status": "en curso"
 }
 
 ### Obteniendo toda las tareas
 GET http://localhost:3000/alltasks
 
 ### Actualizando la tarea 
-PUT http://localhost:3000/uptadetask
+PUT http://localhost:3000/uptadetask/60ef707a4fcef671f86dcffd
 Content-Type: application/json
 
 {
-    "id": "60e8cf9221e0a965683c2dc1",
-    "title": "Realizar el proyecto de moviles",
-    "description":"Estudiar React Native",
+    "title": "ayudar a mi sobrino",
+    "description":"tiene muchas tareas",
     "timelimit": "Hasta las 12pm ",
-    "datelimit": "miercoles 20",
+    "datelimit": "1624904420875",
     "tags":"MUY IMPORTANTE"
 }
 
@@ -82,7 +82,7 @@ POST http://localhost:3000/task
 Content-Type: application/json
 
 {
-    "id": "60e8cefa21013a5998ed2f23"
+    "id": "60ec616dc0927a539c50f771"
 
 }
 
@@ -91,7 +91,7 @@ DELETE http://localhost:3000/deletetask
 Content-Type: application/json
 
 {
-    "id": "60e8cefa21013a5998ed2f23"
+    "id": "60eccb163a80404824966c77"
 }
 
 ### Buscar tarea por el titulo
@@ -100,6 +100,15 @@ Content-Type: application/json
 
 {
     "title": "Cocinar sopa"
+
+}
+
+### Buscar tarea por la descripcion
+post http://localhost:3000/taskbydescription
+Content-Type: application/json
+
+{
+    "description": "Picar las verduras muy delgadas"
 
 }
 

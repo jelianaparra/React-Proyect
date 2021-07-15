@@ -8,7 +8,7 @@ exports.createUser = (req, res, next) => {
   const newUser = {
     fullname: req.body.fullname,
     email: req.body.email,
-    //count: req.body.count,
+    confirmpass: bcrypt.hashSync(req.body.confirmpass),
     password: bcrypt.hashSync(req.body.password),
   };
 
@@ -29,7 +29,6 @@ exports.createUser = (req, res, next) => {
       //id: user._id,
       fullname: user.fullname,
       email: user.email,
-      //count: user.count,
       accessToken: accessToken,
       expiresIn: expiresIn,
     };
