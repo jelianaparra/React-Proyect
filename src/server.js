@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const Routes = require("./routes/user.routes");
-const fileupload = require("express-fileupload");
 
 const app = express();
 const router = express.Router();
@@ -22,7 +21,9 @@ app.use(
       "Accept, Content-Type, Accept-Encoding, Content-Length, Authorization",
   })
 );
-
+app.get("/", (req, res) => {
+  res.send("Probando Probando");
+});
 app.use(require("./routes/user.routes"));
 app.use(require("./routes/tasks.routes"));
 
