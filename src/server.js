@@ -29,6 +29,6 @@ app.use(require("./routes/tasks.routes"));
 
 app.use(express.static("uploads"));
 
-app.set("port", process.env.port || 3000);
+app.set("port", process.env.PORT || 3000);
 
 module.exports = app;
