@@ -49,6 +49,7 @@ let vistaStyles = StyleSheet.create({
 
   }
 
+ 
 });
 
 let htmlStyles = {
