@@ -7,7 +7,7 @@ let vistaStyles = StyleSheet.create({
     height: '100%',
 
   },
-
+ 
   view: {
 
     justifyContent: "center", 
